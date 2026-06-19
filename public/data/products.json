@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "Laptop Gaming Acer Nitro 5",
+    "price": 20000000,
+    "description": "Laptop gaming hiệu năng cao, trang bị card đồ họa rời, tản nhiệt cực tốt, phù hợp cho game thủ và sinh viên ngành IT.",
+    "category": "Laptop",
+    "image": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=500&q=80",
+    "rating": { "rate": 4.5, "count": 120 }
+  },
+  {
+    "id": 2,
+    "title": "Điện thoại Samsung Galaxy S23 Ultra",
+    "price": 25000000,
+    "description": "Siêu phẩm smartphone với camera sắc nét, chip xử lý mạnh mẽ, bút S-Pen tiện lợi.",
+    "category": "Điện thoại",
+    "image": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=500&q=80",
+    "rating": { "rate": 4.8, "count": 85 }
+  },
+  {
+    "id": 3,
+    "title": "Smart Tivi LG 4K 55 inch",
+    "price": 12500000,
+    "description": "Tivi thông minh độ phân giải 4K, hình ảnh chân thực, âm thanh vòm sống động, hỗ trợ tìm kiếm bằng giọng nói.",
+    "category": "Tivi",
+    "image": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=500&q=80",
+    "rating": { "rate": 4.3, "count": 42 }
+  },
+  {
+    "id": 4,
+    "title": "Apple MacBook Air M2",
+    "price": 27000000,
+    "description": "Thiết kế siêu mỏng nhẹ, sang trọng. Chip M2 mang lại thời lượng pin ấn tượng và khả năng xử lý mượt mà mọi tác vụ văn phòng.",
+    "category": "Laptop",
+    "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&q=80",
+    "rating": { "rate": 4.9, "count": 200 }
+  },
+  {
+    "id": 5,
+    "title": "Tai nghe Bluetooth Sony WH-1000XM5",
+    "price": 7500000,
+    "description": "Tai nghe chụp tai chống ồn chủ động tốt nhất hiện nay, âm thanh Hi-Res chất lượng cao, pin sử dụng liên tục 30 giờ.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=500&q=80",
+    "rating": { "rate": 4.7, "count": 310 }
+  },
+  {
+    "id": 6,
+    "title": "Điện thoại iPhone 15 Pro Max 256GB",
+    "price": 32000000,
+    "description": "Khung titan siêu nhẹ, viền siêu mỏng, chip A17 Pro chơi game đỉnh cao và hệ thống camera zoom quang học 5x.",
+    "category": "Điện thoại",
+    "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&q=80",
+    "rating": { "rate": 5.0, "count": 512 }
+  },
+  {
+    "id": 7,
+    "title": "Bàn phím cơ Logitech G Pro X",
+    "price": 2900000,
+    "description": "Bàn phím cơ TKL nhỏ gọn, switch thay thế hot-swap dễ dàng, LED RGB đồng bộ qua phần mềm G-Hub.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500&q=80",
+    "rating": { "rate": 4.6, "count": 150 }
+  },
+  {
+    "id": 8,
+    "title": "Chuột không dây Razer DeathAdder V3",
+    "price": 3500000,
+    "description": "Chuột gaming siêu nhẹ chỉ 63g, cảm biến quang học Focus Pro 30K cực nhạy, form cầm công thái học.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500&q=80",
+    "rating": { "rate": 4.8, "count": 210 }
+  },
+  {
+    "id": 9,
+    "title": "Máy tính bảng iPad Pro 11 inch M2",
+    "price": 21000000,
+    "description": "Màn hình Liquid Retina rực rỡ, chip M2 sức mạnh ngang ngửa laptop, hỗ trợ Apple Pencil 2 vẽ vời cực mượt.",
+    "category": "Tablet",
+    "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&q=80",
+    "rating": { "rate": 4.9, "count": 340 }
+  },
+  {
+    "id": 10,
+    "title": "Đồng hồ Apple Watch Series 9",
+    "price": 10500000,
+    "description": "Màn hình sáng hơn, chip S9 mạnh mẽ tích hợp thao tác chạm hai lần (Double Tap) mà không cần chạm màn hình.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=500&q=80",
+    "rating": { "rate": 4.7, "count": 180 }
+  },
+  {
+    "id": 11,
+    "title": "Màn hình Dell UltraSharp 27 inch 4K",
+    "price": 14000000,
+    "description": "Màn hình đồ họa chuyên nghiệp, độ phân giải 4K sắc nét, độ phủ màu 100% sRGB phù hợp cho dân thiết kế.",
+    "category": "Màn hình",
+    "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&q=80",
+    "rating": { "rate": 4.8, "count": 95 }
+  },
+  {
+    "id": 12,
+    "title": "Loa Bluetooth Marshall Stanmore III",
+    "price": 9500000,
+    "description": "Thiết kế vintage cổ điển, âm thanh đặc trưng của Marshall cực kỳ chi tiết, âm trầm sâu lắng.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500&q=80",
+    "rating": { "rate": 4.6, "count": 220 }
+  }
+]
