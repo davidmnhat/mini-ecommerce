@@ -16,7 +16,7 @@ export default function ProductList() {
   const [categories, setCategories] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8;
+  const [itemsPerPage, setItemsPerPage] = useState(8);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -39,28 +39,19 @@ export default function ProductList() {
         const response = await axios.get('/data/products.json');
         let result = response.data;
 
-        const hasSearch = search.trim() !== '';
-        const hasCategory = category !== '';
-
-        if (hasSearch || hasCategory) {
-          result = result.filter(p => {
-            const matchSearch = hasSearch ? p.title.toLowerCase().includes(search.toLowerCase()) : false;
-            const matchCategory = hasCategory ? p.category === category : false;
-
-            if (hasSearch && hasCategory) {
-              return matchSearch || matchCategory;
-            }
-            if (hasSearch) return matchSearch;
-            return matchCategory;
-          });
+        if (search.trim() !== '') {
+          result = result.filter(p => p.title.toLowerCase().includes(search.toLowerCase()));
         }
-
+        if (category !== '') {
+          result = result.filter(p => p.category === category);
+        }
         if (minPrice !== '') {
           result = result.filter(p => p.price >= parseFloat(minPrice));
         }
         if (maxPrice !== '') {
           result = result.filter(p => p.price <= parseFloat(maxPrice));
         }
+
         if (sortType === 'price-asc') {
           result.sort((a, b) => a.price - b.price);
         } else if (sortType === 'price-desc') {
@@ -97,6 +88,11 @@ export default function ProductList() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleSizeChange = (size) => {
+    setItemsPerPage(size);
+    setCurrentPage(1);
+  };
+
   return (
     <div className="p-4 md:p-6">
       <h2 className="text-2xl font-bold text-gray-800 mb-4">Sản Phẩm Nổi Bật</h2>
@@ -129,18 +125,18 @@ export default function ProductList() {
             ))}
           </div>
 
-          {totalPages > 1 && (
-            <div className="mt-10 pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="mt-10 pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+            
+            <div className="flex items-center gap-1.5">
+              <button 
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                className="px-3 py-1.5 text-xs font-semibold rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              >
+                Trước
+              </button>
               
-              <div className="flex items-center gap-1.5">
-                <button 
-                  onClick={() => handlePageChange(currentPage - 1)}
-                  disabled={currentPage === 1}
-                  className="px-3 py-1.5 text-xs font-semibold rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-                >
-                  Trước
-                </button>
-                
+              {totalPages > 1 && (
                 <div className="flex items-center gap-1">
                   {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
                     <button
@@ -156,31 +152,32 @@ export default function ProductList() {
                     </button>
                   ))}
                 </div>
+              )}
 
-                <button 
-                  onClick={() => handlePageChange(currentPage + 1)}
-                  disabled={currentPage === totalPages}
-                  className="px-3 py-1.5 text-xs font-semibold rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-                >
-                  Sau
-                </button>
-              </div>
-
-              <div className="flex items-center gap-2 text-xs font-medium text-gray-600">
-                <span>Chuyển đến:</span>
-                <select 
-                  value={currentPage}
-                  onChange={(e) => handlePageChange(Number(e.target.value))}
-                  className="px-2 py-1.5 border border-gray-200 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500/50 cursor-pointer shadow-sm transition-all"
-                >
-                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                    <option key={page} value={page}>Trang {page}</option>
-                  ))}
-                </select>
-              </div>
-
+              <button 
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages || totalPages <= 1}
+                className="px-3 py-1.5 text-xs font-semibold rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              >
+                Sau
+              </button>
             </div>
-          )}
+
+            <div className="flex items-center gap-2 text-xs font-medium text-gray-600">
+              <span>Hiển thị:</span>
+              <select 
+                value={itemsPerPage}
+                onChange={(e) => handleSizeChange(Number(e.target.value))}
+                className="px-2 py-1.5 border border-gray-200 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500/50 cursor-pointer shadow-sm transition-all"
+              >
+                <option value={4}>4 sản phẩm / trang</option>
+                <option value={8}>8 sản phẩm / trang</option>
+                <option value={12}>12 sản phẩm / trang</option>
+                <option value={16}>16 sản phẩm / trang</option>
+              </select>
+            </div>
+
+          </div>
         </>
       )}
     </div>
