@@ -3,13 +3,25 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
 export default function ProductCard({ product }) {
-  const { addToCart } = useCart();
+  const { addToCart, cartItems, removeFromCart } = useCart();
   const [showNotification, setShowNotification] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
-  const handleAddToCart = () => {
-    addToCart(product);
-    setShowNotification(true);
-    setTimeout(() => setShowNotification(false), 2000);
+  const isInCart = cartItems.some(item => item.id === product.id);
+
+  const handleCartAction = () => {
+    if (isInCart) {
+      setIsDeleteModalOpen(true);
+    } else {
+      addToCart(product);
+      setShowNotification(true);
+      setTimeout(() => setShowNotification(false), 2000);
+    }
+  };
+
+  const confirmDelete = () => {
+    removeFromCart(product.id);
+    setIsDeleteModalOpen(false);
   };
 
   return (
@@ -49,12 +61,39 @@ export default function ProductCard({ product }) {
           Chi tiết
         </Link>
         <button 
-          onClick={handleAddToCart} 
-          className="flex-1 py-1.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded text-xs shadow-sm transition-all"
+          onClick={handleCartAction} 
+          className={`flex-1 py-1.5 font-medium rounded text-xs shadow-sm transition-all ${
+            isInCart 
+              ? 'bg-red-50 text-red-600 hover:bg-red-100 border border-red-200' 
+              : 'bg-blue-600 hover:bg-blue-700 text-white'
+          }`}
         >
-          🛒 Thêm
+          {isInCart ? '✕ Xóa' : '🛒 Thêm'}
         </button>
       </div>
+
+      {isDeleteModalOpen && (
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-[9999]">
+          <div className="bg-white p-6 rounded-xl shadow-xl w-[90%] max-w-sm text-center animate-[popIn_0.2s_ease-out]">
+            <h3 className="text-lg font-bold text-gray-900 mb-2">Xóa sản phẩm</h3>
+            <p className="text-gray-500 mb-5 text-sm">Bỏ "{product.title}" khỏi giỏ hàng?</p>
+            <div className="flex gap-2 justify-center">
+              <button 
+                onClick={() => setIsDeleteModalOpen(false)} 
+                className="px-4 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium rounded text-sm transition-colors"
+              >
+                Hủy
+              </button>
+              <button 
+                onClick={confirmDelete} 
+                className="px-4 py-1.5 bg-red-600 hover:bg-red-700 text-white font-medium rounded text-sm transition-colors shadow-sm"
+              >
+                Xóa
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

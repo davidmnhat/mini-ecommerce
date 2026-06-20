@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 
 export default function SearchBar({ 
-  setSearch, category, setCategory, minPrice, setMinPrice, maxPrice, setMaxPrice, sortType, setSortType, categories = [] 
+  search, setSearch, category, setCategory, minPrice, setMinPrice, maxPrice, setMaxPrice, sortType, setSortType, categories = [] 
 }) {
   const [localSearch, setLocalSearch] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setSearch(localSearch);
+    setCategory('');
   };
 
   const handleInputChange = (e) => {
@@ -19,10 +20,6 @@ export default function SearchBar({
   const handleReset = () => {
     setLocalSearch('');
     setSearch('');
-    setCategory('');
-    setMinPrice('');
-    setMaxPrice('');
-    setSortType('');
   };
 
   const MIN = 100000;
@@ -52,7 +49,7 @@ export default function SearchBar({
 
   const thumbStyles = "[&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-blue-600 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:shadow-sm hover:[&::-webkit-slider-thumb]:scale-110 [&::-moz-range-thumb]:pointer-events-auto [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-blue-600 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:cursor-pointer [&::-moz-range-thumb]:shadow-sm";
 
-  const isFiltering = localSearch.trim() !== '' || category !== '' || minPrice !== '' || maxPrice !== '' || sortType !== '';
+  const isSearchActive = search && search.trim() !== '';
   const inputClass = "px-3 py-1.5 bg-gray-50/60 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500/40 focus:border-blue-500 transition-all text-xs text-gray-700 w-full";
 
   return (
@@ -63,7 +60,7 @@ export default function SearchBar({
         <button type="submit" className="px-4 py-1.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-medium rounded-lg shadow-sm transition-colors whitespace-nowrap">
           Tìm
         </button>
-        {isFiltering && (
+        {isSearchActive && (
           <button type="button" onClick={handleReset} className="px-3 py-1.5 bg-red-50 hover:bg-red-100 text-red-600 font-semibold rounded-lg shadow-sm transition-all whitespace-nowrap flex items-center gap-1 animate-[fadeIn_0.2s_ease-out]">
             ✕ Hủy
           </button>
@@ -78,7 +75,6 @@ export default function SearchBar({
       </div>
 
       <div className="group relative flex flex-col justify-center w-full sm:w-[240px] px-3 pt-6 pb-2 bg-gray-50/80 border border-gray-200 rounded-lg">
-        
         <div className="relative w-full h-1.5 bg-gray-200 rounded-full">
           <div className="absolute h-1.5 bg-blue-600 rounded-full" style={{ left: `${minPos}%`, right: `${100 - maxPos}%` }}></div>
 
