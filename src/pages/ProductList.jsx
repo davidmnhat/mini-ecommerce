@@ -15,6 +15,9 @@ export default function ProductList() {
   const [sortType, setSortType] = useState('');
   const [categories, setCategories] = useState([]);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
+
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -36,12 +39,22 @@ export default function ProductList() {
         const response = await axios.get('/data/products.json');
         let result = response.data;
 
-        if (search.trim() !== '') {
-          result = result.filter(p => p.title.toLowerCase().includes(search.toLowerCase()));
+        const hasSearch = search.trim() !== '';
+        const hasCategory = category !== '';
+
+        if (hasSearch || hasCategory) {
+          result = result.filter(p => {
+            const matchSearch = hasSearch ? p.title.toLowerCase().includes(search.toLowerCase()) : false;
+            const matchCategory = hasCategory ? p.category === category : false;
+
+            if (hasSearch && hasCategory) {
+              return matchSearch || matchCategory;
+            }
+            if (hasSearch) return matchSearch;
+            return matchCategory;
+          });
         }
-        if (category !== '') {
-          result = result.filter(p => p.category === category);
-        }
+
         if (minPrice !== '') {
           result = result.filter(p => p.price >= parseFloat(minPrice));
         }
@@ -59,6 +72,7 @@ export default function ProductList() {
         }
         
         setProducts(result);
+        setCurrentPage(1);
         setError(null);
       } catch (err) {
         setError('Không thể tải dữ liệu sản phẩm!');
@@ -75,13 +89,20 @@ export default function ProductList() {
     return () => clearTimeout(delayDebounceFn);
   }, [search, category, minPrice, maxPrice, sortType]);
 
+  const totalPages = Math.ceil(products.length / itemsPerPage);
+  const currentProducts = products.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="p-4 md:p-6">
       <h2 className="text-2xl font-bold text-gray-800 mb-4">Sản Phẩm Nổi Bật</h2>
       
       <SearchBar 
-        search={search}
-        setSearch={setSearch}
+        search={search} setSearch={setSearch}
         category={category} setCategory={setCategory}
         minPrice={minPrice} setMinPrice={setMinPrice}
         maxPrice={maxPrice} setMaxPrice={setMaxPrice}
@@ -101,11 +122,66 @@ export default function ProductList() {
           <p className="text-gray-500 text-sm">Không tìm thấy sản phẩm nào khớp với bộ lọc.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
-          {products.map(product => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        <>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
+            {currentProducts.map(product => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+
+          {totalPages > 1 && (
+            <div className="mt-10 pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+              
+              <div className="flex items-center gap-1.5">
+                <button 
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className="px-3 py-1.5 text-xs font-semibold rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                >
+                  Trước
+                </button>
+                
+                <div className="flex items-center gap-1">
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                    <button
+                      key={page}
+                      onClick={() => handlePageChange(page)}
+                      className={`w-8 h-8 flex items-center justify-center text-xs font-bold rounded-lg transition-all ${
+                        currentPage === page 
+                          ? 'bg-blue-600 text-white shadow-md' 
+                          : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+                      }`}
+                    >
+                      {page}
+                    </button>
+                  ))}
+                </div>
+
+                <button 
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className="px-3 py-1.5 text-xs font-semibold rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                >
+                  Sau
+                </button>
+              </div>
+
+              <div className="flex items-center gap-2 text-xs font-medium text-gray-600">
+                <span>Chuyển đến:</span>
+                <select 
+                  value={currentPage}
+                  onChange={(e) => handlePageChange(Number(e.target.value))}
+                  className="px-2 py-1.5 border border-gray-200 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500/50 cursor-pointer shadow-sm transition-all"
+                >
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                    <option key={page} value={page}>Trang {page}</option>
+                  ))}
+                </select>
+              </div>
+
+            </div>
+          )}
+        </>
       )}
     </div>
   );
