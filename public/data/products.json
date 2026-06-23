@@ -1,0 +1,353 @@
+[
+  {
+    "id": 1,
+    "title": "Laptop Gaming Acer Nitro 5",
+    "price": 20000000,
+    "description": "Laptop gaming hiệu năng cao, trang bị card đồ họa rời, tản nhiệt cực tốt, phù hợp cho game thủ và sinh viên ngành IT.",
+    "category": "Laptop",
+    "image": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=500&q=80",
+    "rating": { "rate": 4.5, "count": 120 }
+  },
+  {
+    "id": 2,
+    "title": "Điện thoại Samsung Galaxy S23 Ultra",
+    "price": 25000000,
+    "description": "Siêu phẩm smartphone với camera sắc nét, chip xử lý mạnh mẽ, bút S-Pen tiện lợi.",
+    "category": "Điện thoại",
+    "image": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=500&q=80",
+    "rating": { "rate": 4.8, "count": 85 }
+  },
+  {
+    "id": 3,
+    "title": "Smart Tivi LG 4K 55 inch",
+    "price": 12500000,
+    "description": "Tivi thông minh độ phân giải 4K, hình ảnh chân thực, âm thanh vòm sống động, hỗ trợ tìm kiếm bằng giọng nói.",
+    "category": "Tivi",
+    "image": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=500&q=80",
+    "rating": { "rate": 4.3, "count": 42 }
+  },
+  {
+    "id": 4,
+    "title": "Apple MacBook Air M2",
+    "price": 27000000,
+    "description": "Thiết kế siêu mỏng nhẹ, sang trọng. Chip M2 mang lại thời lượng pin ấn tượng và khả năng xử lý mượt mà mọi tác vụ văn phòng.",
+    "category": "Laptop",
+    "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&q=80",
+    "rating": { "rate": 4.9, "count": 200 }
+  },
+  {
+    "id": 5,
+    "title": "Tai nghe Bluetooth Sony WH-1000XM5",
+    "price": 7500000,
+    "description": "Tai nghe chụp tai chống ồn chủ động tốt nhất hiện nay, âm thanh Hi-Res chất lượng cao, pin sử dụng liên tục 30 giờ.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80",
+    "rating": { "rate": 4.7, "count": 310 }
+  },
+  {
+    "id": 6,
+    "title": "Điện thoại iPhone 15 Pro Max 256GB",
+    "price": 32000000,
+    "description": "Khung titan siêu nhẹ, viền siêu mỏng, chip A17 Pro chơi game đỉnh cao và hệ thống camera zoom quang học 5x.",
+    "category": "Điện thoại",
+    "image": "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=500&q=80",
+    "rating": { "rate": 5.0, "count": 512 }
+  },
+  {
+    "id": 7,
+    "title": "Bàn phím cơ Logitech G Pro X",
+    "price": 2900000,
+    "description": "Bàn phím cơ TKL nhỏ gọn, switch thay thế hot-swap dễ dàng, LED RGB đồng bộ qua phần mềm G-Hub.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&q=80",
+    "rating": { "rate": 4.6, "count": 150 }
+  },
+  {
+    "id": 8,
+    "title": "Chuột không dây Razer DeathAdder V3",
+    "price": 3500000,
+    "description": "Chuột gaming siêu nhẹ chỉ 63g, cảm biến quang học Focus Pro 30K cực nhạy, form cầm công thái học.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&q=80",
+    "rating": { "rate": 4.8, "count": 210 }
+  },
+  {
+    "id": 9,
+    "title": "Máy tính bảng iPad Pro 11 inch M2",
+    "price": 21000000,
+    "description": "Màn hình Liquid Retina rực rỡ, chip M2 sức mạnh ngang ngửa laptop, hỗ trợ Apple Pencil 2 vẽ vời cực mượt.",
+    "category": "Tablet",
+    "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&q=80",
+    "rating": { "rate": 4.9, "count": 340 }
+  },
+  {
+    "id": 10,
+    "title": "Đồng hồ Apple Watch Series 9",
+    "price": 10500000,
+    "description": "Màn hình sáng hơn, chip S9 mạnh mẽ tích hợp thao tác chạm hai lần (Double Tap) mà không cần chạm màn hình.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=500&q=80",
+    "rating": { "rate": 4.7, "count": 180 }
+  },
+  {
+    "id": 11,
+    "title": "Màn hình Dell UltraSharp 27 inch 4K",
+    "price": 14000000,
+    "description": "Màn hình đồ họa chuyên nghiệp, độ phân giải 4K sắc nét, độ phủ màu 100% sRGB phù hợp cho dân thiết kế.",
+    "category": "Màn hình",
+    "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&q=80",
+    "rating": { "rate": 4.8, "count": 95 }
+  },
+  {
+    "id": 12,
+    "title": "Loa Bluetooth Marshall Stanmore III",
+    "price": 9500000,
+    "description": "Thiết kế vintage cổ điển, âm thanh đặc trưng của Marshall cực kỳ chi tiết, âm trầm sâu lắng.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=500&q=80",
+    "rating": { "rate": 4.6, "count": 220 }
+  },
+  {
+    "id": 13,
+    "title": "Laptop Asus ROG Strix G15",
+    "price": 28500000,
+    "description": "Laptop gaming với màn hình 144Hz, LED RGB viền máy nổi bật, tản nhiệt lỏng kim loại cho hiệu năng ổn định.",
+    "category": "Laptop",
+    "image": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500&q=80",
+    "rating": { "rate": 4.7, "count": 145 }
+  },
+  {
+    "id": 14,
+    "title": "Điện thoại Xiaomi 13 Pro",
+    "price": 19000000,
+    "description": "Smartphone trang bị ống kính Leica, sạc siêu tốc 120W, màn hình cong tràn viền đẹp mắt.",
+    "category": "Điện thoại",
+    "image": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&q=80",
+    "rating": { "rate": 4.5, "count": 89 }
+  },
+  {
+    "id": 15,
+    "title": "Bàn phím cơ Keychron K8 Pro",
+    "price": 2400000,
+    "description": "Bàn phím cơ không dây hỗ trợ Mac/Win hoàn hảo, lót tiêu âm silicon kép gõ cực êm ái.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=500&q=80",
+    "rating": { "rate": 4.8, "count": 305 }
+  },
+  {
+    "id": 17,
+    "title": "Màn hình LG UltraGear 27 inch 144Hz",
+    "price": 6800000,
+    "description": "Màn hình gaming tấm nền IPS, tần số quét 144Hz và độ trễ chỉ 1ms, chống xé hình G-Sync.",
+    "category": "Màn hình",
+    "image": "https://images.unsplash.com/photo-1547119957-637f8679db1e?w=500&q=80",
+    "rating": { "rate": 4.6, "count": 175 }
+  },
+  {
+    "id": 18,
+    "title": "Tablet Samsung Galaxy Tab S9",
+    "price": 18500000,
+    "description": "Máy tính bảng Android cao cấp, chống nước IP68, màn hình Dynamic AMOLED 2X kèm bút S-Pen.",
+    "category": "Tablet",
+    "image": "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=500&q=80",
+    "rating": { "rate": 4.7, "count": 110 }
+  },
+  {
+    "id": 19,
+    "title": "Tivi Sony Bravia 4K 65 inch",
+    "price": 19500000,
+    "description": "Công nghệ Triluminos Pro tái tạo màu sắc rực rỡ, chip X1 4K HDR xử lý hình ảnh tuyệt đỉnh.",
+    "category": "Tivi",
+    "image": "https://images.unsplash.com/photo-1552975084-6e027cd345c2?w=500&q=80",
+    "rating": { "rate": 4.5, "count": 68 }
+  },
+  {
+    "id": 20,
+    "title": "Laptop Dell XPS 13 Plus",
+    "price": 38000000,
+    "description": "Thiết kế tương lai với trackpad tàng hình, màn hình OLED viền siêu mỏng, hiệu năng vượt trội.",
+    "category": "Laptop",
+    "image": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&q=80",
+    "rating": { "rate": 4.8, "count": 92 }
+  },
+  {
+    "id": 21,
+    "title": "Điện thoại Oppo Find X6 Pro",
+    "price": 22000000,
+    "description": "Camera hợp tác cùng Hasselblad mang lại chất ảnh nghệ thuật, mặt lưng da thuần chay sang trọng.",
+    "category": "Điện thoại",
+    "image": "https://images.unsplash.com/photo-1565630916779-e303be97b6f5?w=500&q=80",
+    "rating": { "rate": 4.4, "count": 54 }
+  },
+  {
+    "id": 22,
+    "title": "Tai nghe Apple AirPods Pro 2",
+    "price": 6000000,
+    "description": "Tai nghe True Wireless chống ồn tốt nhất của Apple, tích hợp chip H2, hộp sạc có loa báo tìm kiếm.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=500&q=80",
+    "rating": { "rate": 4.9, "count": 890 }
+  },
+  {
+    "id": 23,
+    "title": "Loa Bluetooth JBL Charge 5",
+    "price": 3500000,
+    "description": "Loa di động chống nước IP67, âm bass mạnh mẽ, kiêm luôn sạc dự phòng cho điện thoại.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500&q=80",
+    "rating": { "rate": 4.7, "count": 412 }
+  },
+  {
+    "id": 24,
+    "title": "Laptop Lenovo ThinkPad X1 Carbon",
+    "price": 35000000,
+    "description": "Laptop doanh nhân siêu bền bỉ, bàn phím gõ sướng nhất thế giới, trọng lượng chỉ 1.1kg.",
+    "category": "Laptop",
+    "image": "https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?w=500&q=80",
+    "rating": { "rate": 4.9, "count": 160 }
+  },
+  {
+    "id": 25,
+    "title": "Màn hình cong Samsung Odyssey G7",
+    "price": 12500000,
+    "description": "Độ cong 1000R ôm trọn tầm nhìn, tần số quét 240Hz hoàn hảo cho các tựa game FPS nhịp độ cao.",
+    "category": "Màn hình",
+    "image": "https://images.unsplash.com/photo-1616763355548-1b606f439f86?w=500&q=80",
+    "rating": { "rate": 4.8, "count": 215 }
+  },
+  {
+    "id": 26,
+    "title": "Đồng hồ thể thao Garmin Fenix 7",
+    "price": 16000000,
+    "description": "Đồng hồ GPS đa môn thể thao cao cấp, tích hợp sạc năng lượng mặt trời, bản đồ dẫn đường chi tiết.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80",
+    "rating": { "rate": 4.8, "count": 105 }
+  },
+  {
+    "id": 27,
+    "title": "Bảng vẽ điện tử Wacom Intuos Pro M",
+    "price": 8500000,
+    "description": "Bảng vẽ chuyên nghiệp với lực nhấn siêu nhạy, kết nối Bluetooth, công cụ đắc lực cho designer.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=500&q=80",
+    "rating": { "rate": 4.6, "count": 88 }
+  },
+  {
+    "id": 28,
+    "title": "Điện thoại Vivo X90 Pro",
+    "price": 20000000,
+    "description": "Cảm biến camera 1 inch khổng lồ chụp đêm như ban ngày, chip Dimensity 9200 mát và mạnh.",
+    "category": "Điện thoại",
+    "image": "https://images.unsplash.com/photo-1573148195900-7845dcb9b127?w=500&q=80",
+    "rating": { "rate": 4.3, "count": 42 }
+  },
+  {
+    "id": 29,
+    "title": "Tablet iPad Air 5 64GB",
+    "price": 14000000,
+    "description": "Thiết kế hiện đại nhiều màu sắc, mang trong mình sức mạnh của chip M1, cổng sạc Type-C tiện dụng.",
+    "category": "Tablet",
+    "image": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&q=80",
+    "rating": { "rate": 4.8, "count": 520 }
+  },
+  {
+    "id": 30,
+    "title": "Tai nghe Gaming Razer BlackShark V2",
+    "price": 2500000,
+    "description": "Tai nghe eSports siêu nhẹ, cách âm bịt kín cực tốt, micro lọc ồn xuất sắc cho việc giao tiếp trong game.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1612444530582-fc66183b16f7?w=500&q=80",
+    "rating": { "rate": 4.5, "count": 270 }
+  },
+  {
+    "id": 32,
+    "title": "Tivi Samsung Neo QLED 8K 75 inch",
+    "price": 85000000,
+    "description": "Đỉnh cao công nghệ tivi với độ phân giải 8K cực nét, viền màn hình vô cực, công nghệ Quantum Matrix.",
+    "category": "Tivi",
+    "image": "https://images.unsplash.com/photo-1461151304267-38535e780c79?w=500&q=80",
+    "rating": { "rate": 4.9, "count": 15 }
+  },
+  {
+    "id": 33,
+    "title": "Bàn phím cơ Razer BlackWidow V4",
+    "price": 4200000,
+    "description": "Bàn phím gaming full-size, dải LED RGB viền cực cháy, trang bị hàng phím macro chuyên dụng.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1601445638532-3c6f6c3aa1d6?w=500&q=80",
+    "rating": { "rate": 4.7, "count": 96 }
+  },
+  {
+    "id": 34,
+    "title": "Chuột MMO Corsair Scimitar RGB Elite",
+    "price": 1900000,
+    "description": "Chuột chuyên cho game MOBA/MMO với cụm 12 nút hông có thể trượt điều chỉnh vị trí.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1625600243103-1dc6824c6c8a?w=500&q=80",
+    "rating": { "rate": 4.5, "count": 82 }
+  },
+  {
+    "id": 35,
+    "title": "Màn hình Asus ProArt 24 inch",
+    "price": 5500000,
+    "description": "Màn hình chuẩn màu đồ họa xuất xưởng, tích hợp thước đo ảo, cân chỉnh màu cực kỳ chính xác.",
+    "category": "Màn hình",
+    "image": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=500&q=80",
+    "rating": { "rate": 4.8, "count": 140 }
+  },
+  {
+    "id": 36,
+    "title": "Cáp sạc nhanh Anker PowerLine III",
+    "price": 350000,
+    "description": "Cáp bọc dù siêu bền, chịu được 25.000 lần uốn cong, hỗ trợ sạc nhanh chuẩn PD.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1585338107529-13afc5f02586?w=500&q=80",
+    "rating": { "rate": 4.9, "count": 1200 }
+  },
+  {
+    "id": 38,
+    "title": "Laptop Apple MacBook Pro 14 M3",
+    "price": 40000000,
+    "description": "Sức mạnh khủng khiếp từ chip M3, màn hình Liquid Retina XDR 120Hz siêu sáng.",
+    "category": "Laptop",
+    "image": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=500&q=80",
+    "rating": { "rate": 5.0, "count": 180 }
+  },
+  {
+    "id": 39,
+    "title": "Điện thoại Google Pixel 8 Pro",
+    "price": 24000000,
+    "description": "Android thuần mượt mà, AI chỉnh sửa ảnh bá đạo, thuật toán chụp đêm đỉnh cao của Google.",
+    "category": "Điện thoại",
+    "image": "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=500&q=80",
+    "rating": { "rate": 4.6, "count": 94 }
+  },
+  {
+    "id": 40,
+    "title": "Tai nghe Samsung Galaxy Buds 2 Pro",
+    "price": 3200000,
+    "description": "Thiết kế nhỏ gọn vừa vặn, âm thanh Hi-Fi 24-bit, chống ồn thông minh tự động nhận diện giọng nói.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&q=80",
+    "rating": { "rate": 4.7, "count": 315 }
+  },
+  {
+    "id": 41,
+    "title": "Đồng hồ Samsung Galaxy Watch 6",
+    "price": 6500000,
+    "description": "Viền màn hình mỏng hơn, theo dõi giấc ngủ chuyên sâu, cảm biến đo thành phần cơ thể BIA.",
+    "category": "Phụ kiện",
+    "image": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=500&q=80",
+    "rating": { "rate": 4.5, "count": 250 }
+  },
+  {
+    "id": 42,
+    "title": "Tivi LG OLED Evo 55 inch",
+    "price": 26000000,
+    "description": "Tấm nền OLED Evo sáng hơn 20%, đen sâu tuyệt đối, thiết kế mỏng như một bức tranh treo tường.",
+    "category": "Tivi",
+    "image": "https://images.unsplash.com/photo-1601944179066-29786cb9d32a?w=500&q=80",
+    "rating": { "rate": 4.9, "count": 112 }
+  }
+]
