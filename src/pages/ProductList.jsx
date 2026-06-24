@@ -1,15 +1,19 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom'; 
 import axios from 'axios';
 import ProductCard from '../components/ProductCard';
 import SearchBar from '../components/SearchBar';
 
 export default function ProductList() {
+  const location = useLocation(); 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const [search, setSearch] = useState('');
-  const [category, setCategory] = useState('');
+  
+  const [category, setCategory] = useState(location.state?.filteredCategory || '');
+  
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [sortType, setSortType] = useState('');
@@ -98,7 +102,6 @@ export default function ProductList() {
 
     const elements = [];
 
-    // Nếu tổng số trang ít hơn hoặc bằng 3 thì in ra hết
     if (totalPages <= 3) {
       for (let i = 1; i <= totalPages; i++) {
         elements.push(
@@ -118,7 +121,6 @@ export default function ProductList() {
       return elements;
     }
 
-    // Tính toán cửa sổ 3 số
     let startPage = Math.max(1, currentPage - 1);
     let endPage = Math.min(totalPages, currentPage + 1);
 
@@ -128,7 +130,6 @@ export default function ProductList() {
       startPage = totalPages - 2;
     }
 
-    // Dấu ... ở đầu (nếu số bắt đầu lớn hơn 1)
     if (startPage > 1) {
       elements.push(
         <span key="dots-start" className="w-8 h-8 flex items-center justify-center text-xs font-bold text-gray-400 select-none">
@@ -137,7 +138,6 @@ export default function ProductList() {
       );
     }
 
-    // In ra 3 số
     for (let i = startPage; i <= endPage; i++) {
       elements.push(
         <button
@@ -154,7 +154,6 @@ export default function ProductList() {
       );
     }
 
-    // Dấu ... ở cuối (nếu số kết thúc nhỏ hơn tổng số trang)
     if (endPage < totalPages) {
       elements.push(
         <span key="dots-end" className="w-8 h-8 flex items-center justify-center text-xs font-bold text-gray-400 select-none">
@@ -194,7 +193,7 @@ export default function ProductList() {
         <>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
             {currentProducts.map(product => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} currentCategory={category} />
             ))}
           </div>
 

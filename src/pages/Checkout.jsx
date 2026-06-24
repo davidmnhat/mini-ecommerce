@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 
 export default function Checkout() {
   const navigate = useNavigate();
+  const location = useLocation();
   const { user } = useAuth();
   const { removeFromCart } = useCart();
 
@@ -21,15 +22,23 @@ export default function Checkout() {
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
 
   useEffect(() => {
-    const savedItems = localStorage.getItem('checkoutItems');
-    const savedTotal = localStorage.getItem('checkoutTotal');
-    if (savedItems) {
-      setSelectedItems(JSON.parse(savedItems));
-      setSelectedTotal(Number(savedTotal));
-    } else if (!isSuccessModalOpen) {
-      navigate('/cart');
+    if (location.state?.directBuyItem) {
+      const item = location.state.directBuyItem;
+      setSelectedItems([item]);
+      setSelectedTotal(item.price * item.quantity);
+    } else {
+      const savedItems = localStorage.getItem('checkoutItems');
+      const savedTotal = localStorage.getItem('checkoutTotal');
+      if (savedItems) {
+        setSelectedItems(JSON.parse(savedItems));
+        setSelectedTotal(Number(savedTotal));
+      } else if (!isSuccessModalOpen) {
+        navigate('/cart');
+      }
     }
+  }, [navigate, isSuccessModalOpen, location.state]);
 
+  useEffect(() => {
     fetch('/data/vietnamLocality.json')
       .then(res => res.json())
       .then(setLocalityData)
@@ -43,7 +52,7 @@ export default function Checkout() {
         setFormData(parsed);
       }
     }
-  }, [navigate, user, isSuccessModalOpen]);
+  }, [user]);
 
   const handleSaveAddress = (e) => {
     e.preventDefault();
@@ -78,6 +87,7 @@ export default function Checkout() {
     selectedItems.forEach(item => removeFromCart(item.id));
     localStorage.removeItem('checkoutItems');
     localStorage.removeItem('checkoutTotal');
+    
     setIsSuccessModalOpen(true);
   };
 
@@ -100,8 +110,8 @@ export default function Checkout() {
 
           <div className="bg-white p-6 rounded-xl shadow-sm">
             <h3 className="text-lg font-bold mb-4">🛒 Sản phẩm thanh toán</h3>
-            {selectedItems.map(item => (
-              <div key={item.id} className="flex items-center gap-4 py-4 border-b">
+            {selectedItems.map((item, idx) => (
+              <div key={`${item.id}-${idx}`} className="flex items-center gap-4 py-4 border-b">
                 <img src={item.image} alt={item.title} className="w-20 h-20 object-cover rounded border" />
                 <div className="flex-1">
                   <p className="font-medium">{item.title}</p>

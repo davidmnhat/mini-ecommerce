@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, currentCategory }) {
   const { addToCart, cartItems, removeFromCart } = useCart();
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
@@ -45,7 +45,11 @@ export default function ProductCard({ product }) {
         </div>
       )}
 
-      <Link to={`/product/${product.id}`} className="flex flex-col flex-1">
+      <Link 
+        to={`/product/${product.id}`} 
+        state={currentCategory ? { category: currentCategory } : undefined} 
+        className="flex flex-col flex-1"
+      >
         <div className="w-full h-40 mb-4 overflow-hidden rounded-lg flex items-center justify-center bg-gray-50 p-2">
           <img 
             src={product.image} 
