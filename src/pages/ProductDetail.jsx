@@ -67,7 +67,6 @@ export default function ProductDetail() {
     }
   }, [currentImageIndex]);
 
-  // CẬP NHẬT: Kiểm tra đăng nhập khi Thêm vào giỏ
   const handleAddToCart = () => {
     if (!isLoggedIn) {
       setIsLoginPromptOpen(true);
@@ -78,7 +77,6 @@ export default function ProductDetail() {
     setTimeout(() => setShowNotification(false), 2000);
   };
 
-  // CẬP NHẬT: Kiểm tra đăng nhập khi Mua ngay
   const handleBuyNow = () => {
     if (!isLoggedIn) {
       setIsLoginPromptOpen(true);
